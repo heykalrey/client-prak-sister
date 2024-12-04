@@ -1,0 +1,246 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    color: #333;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kontainer Utama */
+#app-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #2d3436;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+button,
+#logoutBtn {
+    background-color: #0984e3;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+#logoutBtn:hover {
+    background-color: #74b9ff;
+    transform: translateY(-3px);
+}
+
+/* Tombol Logout */
+#logoutBtn {
+    background-color: #e74c3c; /* Warna merah */
+}
+
+#logoutBtn:hover {
+    background-color: #c0392b; /* Warna merah gelap saat hover */
+}
+
+/* Input Pencarian dan Filter */
+#filters {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#filters input,
+#filters select {
+    width: calc(33.33% - 20px);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#filters input:focus,
+#filters select:focus {
+    border-color: #0984e3;
+    outline: none;
+}
+
+/* Task Cards */
+.task {
+    background: #f4f4f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.2);
+}
+
+.task h4 {
+    font-size: 20px;
+    color: #2d3436;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.task p {
+    font-size: 14px;
+    color: #636e72;
+}
+
+/* Prioritas */
+.priority {
+    font-size: 14px;
+    color: #d63031;
+    font-weight: bold;
+}
+
+.task .due-date {
+    font-size: 14px;
+    color: #0984e3;
+    font-weight: bold;
+}
+
+/* Modal - Tambah Tugas */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px; /* Lebar modal lebih proporsional */
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading modal */
+.modal-content h3 {
+    font-size: 24px;
+    color: #2d3436;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    background-color: #f4f4f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fokus input dan textarea */
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+    border-color: #0984e3;
+    box-shadow: 0 0 5px rgba(9, 132, 227, 0.5);
+    outline: none;
+}
+
+/* Tombol Simpan dan Batal */
+.modal-content button {
+    padding: 12px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Tombol Simpan */
+.modal-content .save-btn {
+    background-color: #0984e3;
+    color: white;
+}
+
+.modal-content .save-btn:hover {
+    background-color: #74b9ff;
+    transform: translateY(-3px);
+}
+
+/* Tombol Batal */
+.modal-content .cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.modal-content .cancel-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Mengatur textarea agar lebih fleksibel */
+.modal-content textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    #filters input,
+    #filters select {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #filters input,
+    #filters select {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
